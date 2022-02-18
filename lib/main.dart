@@ -4,5 +4,3 @@ import 'package:presentation/application.dart';
 void main() {
   runApp(const PalindromeApp());
 }
-
-

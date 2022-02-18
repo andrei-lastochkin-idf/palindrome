@@ -40,8 +40,9 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.blue[400],
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
+          color: Colors.blue[400],
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+        ),
         child: Column(
           children: <Widget>[
             TextField(
