@@ -18,8 +18,6 @@
 # Flutter/Dart/Pub related
 /.metadata
 /analysis_options.yaml
-android/
-ios/
 /pubspec.lock
 **/doc/api/
 **/ios/Flutter/.last_build_id
