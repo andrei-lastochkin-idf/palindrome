@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:domain/palindrome_usecase.dart';
-import 'package:presentation/base/bloc_data.dart';
 import 'package:presentation/screen/home/bloc/home_bloc.dart';
 import 'package:presentation/screen/home/bloc/home_data.dart';
+import 'package:presentation/screen/home/stream_palindrome_content.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -32,22 +32,14 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Palindrome check'),
       ),
-      body: StreamBuilder(
-        stream: _bloc.dataStream,
-        initialData: BlocData.init(),
-        builder: (context, snapshot) {
-          final blocData = snapshot.data;
-          if (blocData is BlocData) {
-            final screenData = blocData.data;
-            if (blocData.isLoading) {
-              return _buildLoadingState();
-            } else if (screenData is HomeData) {
-              return _buildResultState(screenData);
-            } else {
-              return Container();
-            }
-          } else {
-            return Container();
+      body: StreamPalindromeContent(
+        dataStream: _bloc.dataStream,
+        children: (blocData) {
+          if (blocData.isLoading) {
+            return _buildLoadingState();
+          }
+          if (blocData.data is HomeData) {
+            return _buildResultState(blocData.data as HomeData);
           }
         },
       ),
