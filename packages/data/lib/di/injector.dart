@@ -1,9 +1,8 @@
 import 'package:get_it/get_it.dart';
-import 'package:domain/repository/network_repository.dart';
-import 'package:data/repository/network_repository.dart';
+import 'package:injectable/injectable.dart';
 
-void initDataModule() {
-  final locator = GetIt.I;
+import 'injector.config.dart';
 
-  locator.registerSingleton<INetworkRepository>(NetworkRepository());
-}
+@InjectableInit()
+void configureDataDependencies(GetIt getIt) => $initGetIt(getIt);
+

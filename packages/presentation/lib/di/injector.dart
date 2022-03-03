@@ -1,11 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:domain/usecase/palindrome_usecase.dart';
-import 'package:presentation/screen/home/bloc/home_bloc.dart';
+import 'package:injectable/injectable.dart';
+import 'injector.config.dart';
 
-void initPresentationModule() {
-  final locator = GetIt.I;
-
-  locator.registerFactory<HomeBloc>(() => HomeBloc(
-        locator.get<PalindromeUseCase>(),
-      ));
-}
+@InjectableInit()
+void configurePresentationDependencies(GetIt getIt) => $initGetIt(getIt);
