@@ -1,5 +1,5 @@
-name: presentation
-description: Presentation layer.
+name: data
+description: Data layer.
 version: 0.0.1
 
 publish_to: 'none'
@@ -11,12 +11,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  data:
-    path: ../data
   domain:
     path: ../domain
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
+
+flutter:

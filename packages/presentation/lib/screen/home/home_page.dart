@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:domain/palindrome_usecase.dart';
+import 'package:get_it/get_it.dart';
 import 'package:presentation/screen/home/bloc/home_bloc.dart';
 import 'package:presentation/screen/home/bloc/home_data.dart';
 import 'package:presentation/screen/home/stream_palindrome_content.dart';
+import 'package:presentation/base/bloc_state.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,18 +12,16 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  final _bloc = HomeBloc(PalindromeUseCase());
-
+class _HomePageState extends BlocState<HomePage, HomeBloc> {
   @override
   void initState() {
     super.initState();
-    _bloc.initState();
+    bloc.initState();
   }
 
   @override
   void dispose() {
-    _bloc.dispose();
+    bloc.dispose();
     super.dispose();
   }
 
@@ -33,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Palindrome check'),
       ),
       body: StreamPalindromeContent(
-        dataStream: _bloc.dataStream,
+        dataStream: bloc.dataStream,
         children: (blocData) {
           if (blocData.isLoading) {
             return _buildLoadingState();
@@ -61,7 +60,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: <Widget>[
             TextField(
-              onChanged: _bloc.setPalindromeString,
+              onChanged: bloc.setPalindromeString,
               style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -98,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onPressed: () {
-                  _bloc.checkPalindrome();
+                  bloc.checkPalindrome();
                 },
               ),
             ),
