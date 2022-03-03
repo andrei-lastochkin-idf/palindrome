@@ -11,15 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  data:
-    path: packages/data
-  domain:
-    path: packages/domain
   presentation:
     path: packages/presentation
   cupertino_icons: ^1.0.2
-  get_it: ^7.2.0
-  injectable: ^1.5.3
 
 dev_dependencies:
   flutter_test:
