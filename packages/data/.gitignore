@@ -14,7 +14,6 @@
 *.ipr
 *.iws
 .idea/
-.metadata
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
@@ -24,6 +23,7 @@
 # Flutter/Dart/Pub related
 # Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
 /pubspec.lock
+/.metadata
 **/doc/api/
 .dart_tool/
 .packages
