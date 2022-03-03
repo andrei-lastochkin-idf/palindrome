@@ -4,3 +4,4 @@ import 'injector.config.dart';
 
 @InjectableInit()
 void configurePresentationDependencies(GetIt getIt) => $initGetIt(getIt);
+
