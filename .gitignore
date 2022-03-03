@@ -16,7 +16,7 @@
 .idea/
 
 # Flutter/Dart/Pub related
-/.metadata
+**.metadata
 /analysis_options.yaml
 /pubspec.lock
 **/doc/api/
@@ -42,3 +42,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+**/injector.config.dart

@@ -1,9 +1,12 @@
 import 'package:domain/usecase/palindrome_usecase.dart';
+import 'package:injectable/injectable.dart';
 import 'package:presentation/base/base_bloc.dart';
 import 'package:presentation/base/base_bloc_impl.dart';
 import 'package:presentation/screen/home/bloc/home_data.dart';
 
+@injectable
 abstract class HomeBloc extends BaseBloc {
+  @factoryMethod
   factory HomeBloc(
     PalindromeUseCase palindromeUseCase,
   ) =>

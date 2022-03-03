@@ -1,11 +1,6 @@
-import 'package:domain/repository/network_repository.dart';
-import 'package:domain/usecase/palindrome_usecase.dart';
 import 'package:get_it/get_it.dart';
+import 'package:injectable/injectable.dart';
+import 'injector.config.dart';
 
-void initDomainModule() {
-  final locator = GetIt.I;
-
-  locator.registerFactory(
-    () => PalindromeUseCase(locator.get<INetworkRepository>()),
-  );
-}
+@InjectableInit()
+void configureDomainDependencies(GetIt getIt) => $initGetIt(getIt);

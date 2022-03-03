@@ -3,6 +3,6 @@ import 'package:presentation/application.dart';
 import 'di/injector.dart';
 
 void main() {
-  setupLocator();
+  configureDependencies();
   runApp(const PalindromeApp());
 }
