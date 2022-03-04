@@ -7,3 +7,4 @@ void initPresentationModule() {
     () => HomeBloc(locator.get<PalindromeUseCase>()),
   );
 }
+

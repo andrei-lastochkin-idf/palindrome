@@ -16,18 +16,19 @@
 .idea/
 
 # Flutter/Dart/Pub related
-**.metadata
+pubspec.lock
+.metadata
+.packages
+injector.config.dart
 /analysis_options.yaml
-/pubspec.lock
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
-.packages
 .pub-cache/
 .pub/
-/build/
+build/
 
 # Web related
 lib/generated_plugin_registrant.dart
@@ -42,4 +43,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-**/injector.config.dart
