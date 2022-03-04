@@ -1,9 +1,7 @@
 import 'package:get_it/get_it.dart';
+import 'package:injectable/injectable.dart';
+import 'injector.config.dart';
 
-void initPresentationModule() {
-  final locator = GetIt.I;
+@InjectableInit()
+void configurePresentationDependencies(GetIt getIt) => $initGetIt(getIt);
 
-  locator.registerFactory<HomeBloc>(
-    () => HomeBloc(locator.get<PalindromeUseCase>()),
-  );
-}
