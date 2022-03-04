@@ -1,8 +1,9 @@
+import 'package:domain/repository/network_repository.dart';
 import 'package:get_it/get_it.dart';
-import 'package:injectable/injectable.dart';
+import '../repository/network_repository.dart';
 
-import 'injector.config.dart';
+void initDataModule() {
+  final locator = GetIt.I;
 
-@InjectableInit()
-void configureDataDependencies(GetIt getIt) => $initGetIt(getIt);
-
+  locator.registerFactory<INetworkRepository>(() => NetworkRepository());
+}
