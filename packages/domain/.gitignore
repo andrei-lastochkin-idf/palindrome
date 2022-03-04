@@ -15,14 +15,3 @@
 *.iws
 .idea/
 
-# Flutter/Dart/Pub related
-/.metadata
-/analysis_options.yaml
-/LICENSE
-/CHANGELOG.md
-/pubspec.lock
-**/doc/api/
-.dart_tool/
-.packages
-build/
-/lib/di/injector.config.dart
